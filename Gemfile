@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'resort'
 
-gem 'rails', '>= 5.0.0.beta2', '< 5.1'
+gem 'rails', '4.2.5'
 
 gem 'rails-api'
 
