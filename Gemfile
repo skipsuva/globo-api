@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'resort'
 
 gem 'rails', '4.2.5'
 
