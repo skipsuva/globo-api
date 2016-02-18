@@ -13,7 +13,7 @@ class PlacesController < ApplicationController
 
   private
 
-  def pin_params
+  def place_params
     params.require(:place).permit(:name,:lat,:long)
   end
 
