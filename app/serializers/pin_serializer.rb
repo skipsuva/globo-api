@@ -1,3 +1,8 @@
 class PinSerializer < ActiveModel::Serializer
-  attributes :id, :nickname, :start_date, :description, :user_id, :place_id
+  embed :ids, include: true
+  attributes :id, :nickname, :start_date, :description, :coords
+
+  def coords
+    [object.place.lat, object.place.long]
+  end
 end
