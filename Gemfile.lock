@@ -41,6 +41,7 @@ GEM
     arel (6.0.3)
     bcrypt (3.1.10)
     builder (3.2.2)
+    coderay (1.1.0)
     concurrent-ruby (1.0.0)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -63,6 +64,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -87,7 +89,12 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -122,6 +129,7 @@ GEM
       activerecord (~> 4)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    slop (3.6.0)
     spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -146,6 +154,8 @@ DEPENDENCIES
   dotenv
   omniauth-facebook
   pg
+  pry
+  rack-cors
   rails (= 4.2.5)
   rails-api
   resort
