@@ -7,4 +7,5 @@ class PinsController < ApplicationController
   def show
     render json: Pin.find(params[:id])
   end
+  
 end
