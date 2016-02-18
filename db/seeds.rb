@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user1 = User.create(name: "Testman Testy", email: "test@example.com")
+user2 = User.create(name: "Sampler McSampleson", email: "sample@example.com")
+
+place1 = Place.create(name: "Flatiron School", long: 40.7065138, lat: 74.0136128)
+place2 = Place.create(name: "Empire State Building", long: 40.7484, lat: 73.9857)
+
+pin1 = Pin.create(nickname: "Flatty Schoo", description: "Dope code, brah", user: user1, place: place1)
+pin2 = Pin.create(nickname: "Empy Stay Bill", description: "Whoa", user: user2, place: place2)
