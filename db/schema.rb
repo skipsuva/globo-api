@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20160219202511) do
     t.text     "description"
     t.integer  "user_id"
     t.integer  "place_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.boolean  "visited"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "visited",     default: false
   end
 
   add_index "pins", ["place_id"], name: "index_pins_on_place_id", using: :btree
