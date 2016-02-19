@@ -39,6 +39,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    bcrypt (3.1.10)
     builder (3.2.2)
     coderay (1.1.0)
     concurrent-ruby (1.0.0)
@@ -122,6 +123,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bcrypt (~> 3.1.7)
   dotenv-rails
   geocoder
   pg
