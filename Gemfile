@@ -16,6 +16,8 @@ gem 'active_model_serializers'
 
 gem 'dotenv-rails'
 
+gem 'devise'
+
 gem 'rack-cors', :require => 'rack/cors'
 
 # To use ActiveModel has_secure_password
