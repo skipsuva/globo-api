@@ -7,14 +7,5 @@ class PlacesController < ApplicationController
     render json: Place.find(params[:id])
   end
 
-  def create
-    Place.create(place_params)
-  end
-
-  private
-
-  def place_params
-    params.require(:place).permit(:name,:lat,:long)
-  end
 
 end
