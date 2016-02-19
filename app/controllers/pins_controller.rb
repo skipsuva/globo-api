@@ -9,13 +9,13 @@ class PinsController < ApplicationController
   end
 
   def create
-    Pin.create(pin_params)
+    Pin.create_by_place(pin_params)
   end
 
   private
 
   def pin_params
-    params.require(:pin).permit(:nickname,:description)
+    params.require(:pin).permit(:nickname,:description,:lat,:long)
   end
 
 end

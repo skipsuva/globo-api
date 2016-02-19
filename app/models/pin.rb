@@ -4,9 +4,10 @@ class Pin < ActiveRecord::Base
   has_many :destinations
   has_many :trips, through: :destinations
 
-  def self.create_by_place(args)
+  def self.create_with_place(args)
 
-    name = args[:name]
+    description = args[:description]
+    name = args[:nickname]
     lat = args[:lat]
     long = args[:long]
 
@@ -20,7 +21,7 @@ class Pin < ActiveRecord::Base
       end
     end
 
-    self.create(nickname:name,place:place)
+    self.create(nickname:name,description:description,place:place)
 
   end
 
