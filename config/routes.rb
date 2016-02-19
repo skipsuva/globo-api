@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :places, except: [:new, :edit]
   resources :destinations, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
+
+  post "/users/sign_in", 'sessions#create'
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
 end
