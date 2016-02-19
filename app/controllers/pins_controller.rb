@@ -9,7 +9,7 @@ class PinsController < ApplicationController
   end
 
   def create
-    Pin.create_by_place(pin_params)
+    Pin.create_with_place(pin_params)
   end
 
   private
