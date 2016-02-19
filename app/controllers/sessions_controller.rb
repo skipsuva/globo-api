@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(user_params)
     if user
       data = {
-        token: user.token,
+        token: user.authentication_token,
         email: user.email
       }
       render json: data, status: 201
