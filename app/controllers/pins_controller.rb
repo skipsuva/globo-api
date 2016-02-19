@@ -9,7 +9,6 @@ class PinsController < ApplicationController
   end
 
   def create
-    binding.pry
     Pin.create(pin_params)
   end
 
