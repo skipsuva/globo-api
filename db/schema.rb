@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219191152) do
+ActiveRecord::Schema.define(version: 20160219202511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 20160219191152) do
     t.text     "description"
     t.integer  "user_id"
     t.integer  "place_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "visited",     default: false
   end
 
   add_index "pins", ["place_id"], name: "index_pins_on_place_id", using: :btree
