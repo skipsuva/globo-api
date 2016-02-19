@@ -12,6 +12,11 @@ class PinsController < ApplicationController
     Pin.create_with_place(pin_params)
   end
 
+  def destroy
+    pin = Pin.find(params[:id])
+    pin.destroy
+  end
+
   private
 
   def pin_params
