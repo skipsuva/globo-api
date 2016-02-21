@@ -1,7 +1,9 @@
 class PinsController < ApplicationController
 
   def index
-    render json: Pin.all
+    # loads only those pins of the authenticated user
+    pins = authenticate!.pins
+    render json: pins
   end
 
   def show
