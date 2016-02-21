@@ -13,6 +13,14 @@ class PinsController < ApplicationController
     render json: pin
   end
 
+  def update
+    binding.pry
+    pin = Pin.find(params[:id])
+    pin.update(pin_params)
+    head 204
+
+  end
+
   def destroy
     pin = Pin.find(params[:id])
     pin.destroy
