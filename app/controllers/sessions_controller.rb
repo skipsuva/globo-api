@@ -15,12 +15,14 @@ class SessionsController < Devise::SessionsController
   # end
   def create
     super do |user|
+      # binding.pry
       if request.format.json?
         data = {
           token: user.authentication_token,
           email: user.email,
           id: user.id
         }
+        # binding.pry
         render json: data, status: 201 and return
       end
     end
