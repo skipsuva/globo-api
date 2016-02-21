@@ -13,10 +13,11 @@ class PinsController < ApplicationController
     render json: pin
   end
 
+# PATCH
   def update
-    binding.pry
     pin = Pin.find(params[:id])
-    pin.update(pin_params)
+    # binding.pry
+    pin.update(nickname: params[:pin][:nickname], description: params[:pin][:description], start_date: params[:pin][:start_date])
     head 204
 
   end
