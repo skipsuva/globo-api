@@ -20,11 +20,11 @@ class ApplicationController < ActionController::API
     end
   end
 
-  def the_auth_token
-    authenticate_with_http_token do |token, options|
-      return token
-    end
-  end
+  # def the_auth_token
+  #   authenticate_with_http_token do |token, options|
+  #     return token
+  #   end
+  # end
 
   def render_unauthorized
     render json: {errors: ['Bad credentials']}, status: 401

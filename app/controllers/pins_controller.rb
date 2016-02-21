@@ -1,8 +1,9 @@
 class PinsController < ApplicationController
 
   def index
+    pins = authenticate!.pins
     # binding.pry
-    render json: current_user.pins
+    render json: pins
   end
 
   def show
