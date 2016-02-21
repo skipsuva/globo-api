@@ -1,8 +1,8 @@
 class PinsController < ApplicationController
 
   def index
+    # loads only those pins of the authenticated user
     pins = authenticate!.pins
-    # binding.pry
     render json: pins
   end
 

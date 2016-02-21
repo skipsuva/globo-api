@@ -1,6 +1,8 @@
 class TripsController < ApplicationController
   def index
-    render json: Trip.all
+    # loads only those trips of the authenticated user
+    trips = authenticate!.trips
+    render json: trips
   end
 
   def show
