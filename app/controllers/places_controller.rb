@@ -1,6 +1,10 @@
 class PlacesController < ApplicationController
   def index
-    render json: Place.all
+    pins = authenticate!.pins
+    places = []
+    pins.each {|pin| places << pin.place}
+    # places = Place.all.where
+    render json: places
   end
 
   def show
