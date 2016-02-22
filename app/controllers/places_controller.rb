@@ -13,7 +13,6 @@ class PlacesController < ApplicationController
 
   def search
     query = params[:query]
-    binding.pry
     coords = Geocoder.coordinates(query)
     address = Geocoder.address(query)
     render json: Place.new(name: address, lat: coords[0], long: coords[1])
