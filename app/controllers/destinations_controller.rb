@@ -1,6 +1,6 @@
 class DestinationsController < ApplicationController
   def index
-    render json: Destination.all
+    render json: Destination.ordered
   end
 
   def show
