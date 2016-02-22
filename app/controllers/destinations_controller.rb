@@ -15,6 +15,6 @@ class DestinationsController < ApplicationController
   private
 
   def destination_params
-    params.require(:destination).permit(:trip_id, :pin_id, :user)
+    params.require(:destination).permit(:trip_id, :pin_id)
   end
 end
