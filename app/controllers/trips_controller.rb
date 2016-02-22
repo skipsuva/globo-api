@@ -16,9 +16,15 @@ class TripsController < ApplicationController
     render json: trip
   end
 
+  def update
+    trip = Trip.find(params[:id])
+    trip.update(trip_params)
+    head 204
+  end
+
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :user_id, :user)
+    params.require(:trip).permit(:name, :user_id, :start_date, :end_date)
   end
 end
