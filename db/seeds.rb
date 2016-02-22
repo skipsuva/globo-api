@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create(name: "Testman Testy", email: "test@example.com")
-user2 = User.create(name: "Sampler McSampleson", email: "sample@example.com")
+user1 = User.create(name: "Testman Testy", email: "test@example.com", password: 'password')
+user2 = User.create(name: "Sampler McSampleson", email: "sample@example.com", password: 'password')
 
 place1 = Place.create(name: "Flatiron School", lat: 40.7065138, long: -74.0136128)
 place2 = Place.create(name: "Empire State Building", lat: 40.7484, long: -73.9857)

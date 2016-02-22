@@ -10,4 +10,11 @@ class PlacesController < ApplicationController
   def show
     render json: Place.find(params[:id])
   end
+
+  def search
+    query = params[:query]
+    coords = Geocoder.coordinates(query)
+    address = Geocoder.address(query)
+    render json: Place.new(name: address, lat: coords[0], long: coords[1])
+  end
 end
