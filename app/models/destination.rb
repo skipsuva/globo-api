@@ -22,7 +22,10 @@ class Destination < ActiveRecord::Base
 
   def move_to_start
     first = self.class.first_in_order
-    first.append_to(self) if self != first
+    if self != first
+      self.append_to(first)
+      first.append_to(self)
+    end
   end
 
   private
