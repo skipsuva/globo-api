@@ -12,6 +12,8 @@ class PinsController < ApplicationController
 
   def create
     pin = Pin.create_with_place(pin_params)
+    pin.user = authenticate!
+    pin.save
     render json: pin
   end
 
