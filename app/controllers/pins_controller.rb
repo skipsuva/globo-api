@@ -12,7 +12,18 @@ class PinsController < ApplicationController
 
   def create
     pin = Pin.create_with_place(pin_params)
+    pin.user = authenticate!
+    pin.save
     render json: pin
+  end
+
+# PATCH
+  def update
+    pin = Pin.find(params[:id])
+    # binding.pry
+    pin.update(nickname: params[:pin][:nickname], description: params[:pin][:description], start_date: params[:pin][:start_date])
+    head 204
+
   end
 
   def destroy
