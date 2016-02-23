@@ -2,7 +2,7 @@ class PinsController < ApplicationController
 
   def index
     # loads only those pins of the authenticated user
-    pins = authenticate!.pins
+    pins = authenticate!.pins.includes(:place)
     render json: pins
   end
 
