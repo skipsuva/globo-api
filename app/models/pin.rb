@@ -21,6 +21,7 @@ class Pin < ActiveRecord::Base
         place_name = try_reverse_geo(lat,long)
         place.name = place_name
         name = place_name
+        place.address = Geocoder.address([lat, long])
         place.save
       end
     end

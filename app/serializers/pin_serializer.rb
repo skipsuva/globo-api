@@ -11,6 +11,6 @@ class PinSerializer < ActiveModel::Serializer
   end
 
   def address
-    Geocoder.address([object.place.lat, object.place.long])
+    object.place.address || Geocoder.address([object.place.lat, object.place.long])
   end
 end
