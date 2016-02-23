@@ -21,7 +21,7 @@ class PinsController < ApplicationController
   def update
     pin = Pin.find(params[:id])
     # binding.pry
-    pin.update(nickname: params[:pin][:nickname], description: params[:pin][:description], start_date: params[:pin][:start_date])
+    pin.update(nickname: params[:pin][:nickname], description: params[:pin][:description], start_date: params[:pin][:start_date], visited: params[:pin][:visited])
     head 204
 
   end
@@ -35,7 +35,7 @@ class PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:nickname,:description,:lat,:long)
+    params.require(:pin).permit(:nickname,:description,:lat,:long,:visited)
   end
 
 end
