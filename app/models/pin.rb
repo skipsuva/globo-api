@@ -1,7 +1,7 @@
 class Pin < ActiveRecord::Base
   belongs_to :user
   belongs_to :place
-  has_many :destinations
+  has_many :destinations, dependent: :destroy
   has_many :trips, through: :destinations
 
   def self.create_with_place(args)

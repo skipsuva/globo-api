@@ -12,6 +12,12 @@ class DestinationsController < ApplicationController
     render json: destination
   end
 
+  def destroy
+    destination = Destination.find(params[:id])
+    destination.destroy
+    head 204
+  end
+
   private
 
   def destination_params
