@@ -21,7 +21,7 @@ class PinsController < ApplicationController
   def update
     pin = Pin.find(params[:id])
     # binding.pry
-    pin.update(nickname: params[:pin][:nickname], description: params[:pin][:description], start_date: params[:pin][:start_date], start_date: params[:pin][:visited])
+    pin.update(nickname: params[:pin][:nickname], description: params[:pin][:description], start_date: params[:pin][:start_date], visited: params[:pin][:visited])
     head 204
 
   end
