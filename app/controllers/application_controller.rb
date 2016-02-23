@@ -4,6 +4,8 @@ class ApplicationController < ActionController::API
   helper_method :current_user
   before_action :authenticate!
 
+  Geocoder.configure(:timeout => 1000)
+
   # def current_user
   #   User.find_by(authentication_token: the_auth_token)
   # end
