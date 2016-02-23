@@ -18,6 +18,12 @@ class Pin < ActiveRecord::Base
     else
       if (lat && long)
         place = Place.create(lat:lat,long:long)
+        result = Geocoder.search("#{lat},#{long}")
+        place_name = result[0].try(:data).try("[]","address_components").try(:find){|h| h["types"].try(:include?,"locality")}.try("[]","long_name")
+        place_name = result[0].try(:data).try("[]","address_components").try(:find){|h| h["types"].try(:include?,"political")}.try("[]","long_name") if !place_name
+        place.name = place_name
+        name = place_name
+        place.save
       end
     end
 
