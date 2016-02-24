@@ -1,4 +1,7 @@
 class Trip < ActiveRecord::Base
+
+  @@default_color = "#11a"
+
   belongs_to :user
   has_many :destinations, dependent: :destroy
   has_many :pins, through: :destinations
@@ -12,6 +15,7 @@ class Trip < ActiveRecord::Base
   end
 
   def hex_color
+    return @@default_color unless color
     color.to_s(16).rjust(6,"0").prepend("#")
   end
 
@@ -21,9 +25,10 @@ class Trip < ActiveRecord::Base
     #TODO select default color from palette
     last_color = Trip.last.try(:color)
     if not last_color
-      self.hex_color = "000"
+      self.hex_color = @@default_color
     else
-      self.color = (last_color + 32)%0xAAAAAA
+      # self.color = (last_color + 0xFFFFF)%0xAAAAAA
+      self.color = rand(0xaaaaaa)
     end
   end
 
