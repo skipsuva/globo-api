@@ -31,7 +31,7 @@ class Trip < ActiveRecord::Base
     else
       # self.color = (last_color + 0xFFFFF)%0xAAAAAA
       # self.color = random_color(0xaa)
-      @@color_counter ||= 0
+      @@color_counter ||= rand(128)
       @@color_counter += 1
       self.hex_color = @@palette[@@color_counter % @@palette.length]
     end
