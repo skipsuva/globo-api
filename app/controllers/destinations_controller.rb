@@ -18,6 +18,13 @@ class DestinationsController < ApplicationController
     head 204
   end
 
+  def update
+    binding.pry
+    destination = Destination.find(params[:id])
+    destination.update(destination_params)
+    head 204
+  end
+
   private
 
   def destination_params
