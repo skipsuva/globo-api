@@ -19,15 +19,20 @@ class DestinationsController < ApplicationController
   end
 
   def update
-    binding.pry
     destination = Destination.find(params[:id])
-    destination.update(destination_params)
+    case destination_params[:pending_operation]
+    when "later"
+      destination.move_later
+    when "ealier"
+      destination.move_earlier
+    end
+    destination.save
     head 204
   end
 
   private
 
   def destination_params
-    params.require(:destination).permit(:trip_id, :pin_id)
+    params.require(:destination).permit(:trip_id, :pin_id, :pending_operation)
   end
 end
