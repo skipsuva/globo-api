@@ -19,8 +19,10 @@ class DestinationsController < ApplicationController
   end
 
   def update
+    update_params = destination_params
+    update_params.merge!(params.require(:destination).permit(:pending_operation))
     destination = Destination.find(params[:id])
-    case destination_params[:pending_operation]
+    case update_params[:pending_operation]
     when "later"
       destination.move_later
     when "ealier"
@@ -33,6 +35,7 @@ class DestinationsController < ApplicationController
   private
 
   def destination_params
-    params.require(:destination).permit(:trip_id, :pin_id, :pending_operation)
+    params.require(:destination).permit(:trip_id, :pin_id)
   end
+
 end
