@@ -25,7 +25,7 @@ class DestinationsController < ApplicationController
     case update_params[:pending_operation]
     when "later"
       destination.move_later
-    when "ealier"
+    when "earlier"
       destination.move_earlier
     end
     destination.save
