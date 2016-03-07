@@ -3,16 +3,9 @@ class RegistrationsController < Devise::RegistrationsController
   respond_to :html, :json
 
   def create
-    binding.pry
-    super do |user|
-      if request.format.json?
-        data = {
-          token: user.authentication_token,
-          email: user.email,
-          id: user.id
-        }
-        render json: data, status: 201 and return
-      end
+    user = User.create(user_params)
+    if user.save
+      user.save
     end
   end
 
@@ -20,6 +13,6 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:name, :email, :password)
   end
 end
