@@ -8,7 +8,14 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    destination = Destination.create(destination_params)
+    destination = Destination.new(destination_params)
+    destinations = destination.trip.destinations
+    if destinations.empty?
+      destination.first = true
+    else
+      destination.append_to(destinations.last)
+    end
+    destination.save
     render json: destination
   end
 
