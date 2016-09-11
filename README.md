@@ -1,24 +1,5 @@
-## README
+# Globo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project built at the Flatiron School in NYC by [Skip Suva](https://github.com/skipsuva), [David Flaherty](https://github.com/flats) and [Timo](https://github.com/timosci).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Check it out [here](http://globo-api.herokuapp.com/).
